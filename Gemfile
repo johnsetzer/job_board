@@ -6,6 +6,7 @@ gem 'rails', '3.0.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -16,6 +17,10 @@ gem 'pg'
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
 # gem 'ruby-debug19', :require => 'ruby-debug'
+group :development, :test do
+    gem 'ruby-debug19', :require => 'ruby-debug'
+    gem 'ruby-debug-ide19'
+end
 
 # Bundle the extra gems:
 # gem 'bj'
