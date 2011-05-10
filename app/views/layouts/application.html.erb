@@ -7,6 +7,7 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <h1>Job Board</h1>
   <div id="user_nav">
     <% if user_signed_in? %>
       Signed in as <%= current_user.email %>, <%= link_to "Sign out", destroy_user_session_path %>
