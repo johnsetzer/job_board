@@ -1,0 +1,17 @@
+<p>
+  <b>Email:</b>
+  <%= @job_response.email %>
+</p>
+
+<p>
+  <b>Response:</b>
+  <%= @job_response.response %>
+</p>
+
+<p>
+  <b>Resume:</b>
+  <%= @job_response.resume %>
+</p>
+
+
+<%= link_to 'Back', job_post_path(@job_response.job_post) %>

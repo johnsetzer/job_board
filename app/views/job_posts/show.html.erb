@@ -1,0 +1,32 @@
+<p>
+  <b> title:</b>
+  <%= @job_post. title %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @job_post.company %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @job_post.description %>
+</p>
+
+
+<% if can? :modify, @job_post %>
+  <%= link_to 'Edit', edit_job_post_path(@job_post) %> |
+<% end %>
+  
+<% 
+  can_respond = can?(:create, JobResponse)
+  if can_respond && @job_post.user != current_user
+%>
+  <%= link_to 'Apply', new_job_post_job_response_path(@job_post) %> |
+<% elsif !can_respond %>
+  To apply you must, <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %> |
+<% end %>
+<%= link_to 'Back', job_posts_path %>
+
+
+

@@ -1,0 +1,29 @@
+<%= form_for([@job_post, @job_response]) do |f| %>
+  <% if @job_response.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job_response.errors.count, "error") %> prohibited this job_response from being saved:</h2>
+
+      <ul>
+      <% @job_response.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :response, "Why should we hire you?" %><br />
+    <%= f.text_area :response %>
+  </div>
+  <div class="field">
+    <%= f.label :resume %><br />
+    <%= f.text_area :resume %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

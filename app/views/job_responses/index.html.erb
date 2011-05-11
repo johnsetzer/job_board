@@ -1,0 +1,31 @@
+<h2>Job Response</h2>
+
+<table>
+  <tr>
+    <th> user</th>
+    <th>Job post</th>
+    <th>Email</th>
+    <th>Response</th>
+    <th>Resume</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @job_responses.each do |job_response| %>
+  <tr>
+    <td><%= job_response. user_id %></td>
+    <td><%= job_response.job_post_id %></td>
+    <td><%= job_response.email %></td>
+    <td><%= job_response.response %></td>
+    <td><%= job_response.resume %></td>
+    <td><%= link_to 'Show', job_response %></td>
+    <td><%= link_to 'Edit', edit_job_response_path(job_response) %></td>
+    <td><%= link_to 'Destroy', job_response, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Job response', new_job_response_path %>

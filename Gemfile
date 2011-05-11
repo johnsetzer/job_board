@@ -7,6 +7,9 @@ gem 'rails', '3.0.6'
 
 gem 'pg'
 gem 'devise'
+gem "tabs_on_rails"
+gem "cancan"
+
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -1,0 +1,35 @@
+<h2>Job Posts</h2>
+
+<table>
+  <tr>
+    <th> title</th>
+    <th>Company</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @job_posts.each do |job_post| %>
+  <tr>
+    <td><%= job_post. title %></td>
+    <td><%= job_post.company %></td>
+    <td><%= job_post.description %></td>
+    <td><%= link_to 'Show', job_post %></td>
+    <% if can? :modify, job_post %>
+      <td><%= link_to 'Edit', edit_job_post_path(job_post) %></td>
+      <td><%= link_to 'Destroy', job_post, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% if can?(:create, JobPost) %>
+  <%= link_to 'New Job Post', new_job_post_path %>
+<% else %>
+  To apply you must, <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %>
+<% end %>
+
+

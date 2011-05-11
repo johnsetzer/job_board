@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
-  validates :name, :length => { :minimum => 1, :maximum => 50 }
-
+  has_many :job_posts
+  has_many :job_responses
+  
+  validates :name, :presence => true, :length => { :maximum => 50 }
 end
