@@ -35,11 +35,6 @@ class JobResponsesController < ApplicationController
     end
   end
 
-  # GET /job_responses/1/edit
-  def edit
-    @job_response = JobResponse.find(params[:id])
-  end
-
   # POST /job_responses
   # POST /job_responses.xml
   def create
@@ -53,22 +48,6 @@ class JobResponsesController < ApplicationController
         format.xml  { render :xml => @job_response, :status => :created, :location => @job_response }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @job_response.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /job_responses/1
-  # PUT /job_responses/1.xml
-  def update
-    @job_response = JobResponse.find(params[:id])
-
-    respond_to do |format|
-      if @job_response.update_attributes(params[:job_response])
-        format.html { redirect_to(@job_response, :notice => 'Job response was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
         format.xml  { render :xml => @job_response.errors, :status => :unprocessable_entity }
       end
     end

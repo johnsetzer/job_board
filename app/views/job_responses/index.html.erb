@@ -20,12 +20,9 @@
     <td><%= job_response.response %></td>
     <td><%= job_response.resume %></td>
     <td><%= link_to 'Show', job_response %></td>
-    <td><%= link_to 'Edit', edit_job_response_path(job_response) %></td>
     <td><%= link_to 'Destroy', job_response, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Job response', new_job_response_path %>

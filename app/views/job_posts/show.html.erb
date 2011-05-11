@@ -23,7 +23,9 @@
   if can_respond && @job_post.user != current_user
 %>
   <%= link_to 'Apply', new_job_post_job_response_path(@job_post) %> |
-<% elsif !can_respond %>
+<% elsif can_respond %>
+  <%= link_to "Reponses", job_post_job_responses_path(@job_post) %> |
+<% else %>
   To apply you must, <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %> |
 <% end %>
 <%= link_to 'Back', job_posts_path %>
