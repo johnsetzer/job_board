@@ -1,14 +1,14 @@
-poster:
-  name: Adam Poster
-  email: poster@test.com
+head_hunter:
+  name: Adam Head Hunter
+  email: head_hunter@test.com
 
-responder:
-  name: Bill Responder
-  email: responder@test.com
+programmer:
+  name: Bill Programmer
+  email: programmer@test.com
 
 consultant:
   name: Charlie Consultant
-  email: charlie@test.com
+  email: consultant@test.com
 
 manager:
   name: Martin Manager

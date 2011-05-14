@@ -1,25 +1,25 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-programmer_responder:
-  user: responder
-  job_post: poster_programer
+programmer_applies_for_programmer:
+  user: programmer
+  job_post: head_hunter_posts_programer
   response: I write the world's best code, and I am freindly.
   resume: Majored in CSC and I worked for IBM.
 
-manager_responder:
-  user: responder
-  job_post: poster_programer
+programmer_applies_for_manager:
+  user: programmer
+  job_post: head_hunter_posts_manager
   response: I am great at inspiring people.
   resume: Majored in CSC and I worked for IBM.
 
-manager_manager:
+manager_applies_for_manager:
   user: manager
-  job_post: poster_manager
+  job_post: head_hunter_posts_manager
   response: I have a proven track record of managing.
   resume: Harvard MBA
 
-consultant_consultant:
+consultant_applies_for_consultant:
   user: consultant
-  job_post: responder_consultant
+  job_post: programmer_posts_consultant
   response: I can make you more profitable.
   resume: I am the lord of six sigma.
