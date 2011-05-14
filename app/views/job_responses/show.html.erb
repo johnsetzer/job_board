@@ -1,6 +1,11 @@
 <p>
+  <b>Name:</b>
+  <%= @job_response.user.name %>
+</p>
+
+<p>
   <b>Email:</b>
-  <%= @job_response.email %>
+  <%= @job_response.user.email %>
 </p>
 
 <p>
@@ -13,5 +18,4 @@
   <%= @job_response.resume %>
 </p>
 
-
-<%= link_to 'Back', job_post_path(@job_response.job_post) %>
+<%= link_to "Back to Reponses", job_post_job_responses_path(@job_response.job_post) %>

@@ -1,11 +1,19 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-   title: MyString
-  company: MyString
-  description: MyText
+poster_manager:
+  user: poster
+  title: Manager of Engineering
+  company: Sprockets Inc.
+  description: You will be the director of engineering.  Inspire your minions to do great things.
 
-two:
-   title: MyString
-  company: MyString
-  description: MyText
+poster_programer:
+  user: poster
+  title: Programer Level 2
+  company: Sprockets Inc.
+  description: Make great things, and then write test cases for those things. Drink coffee.
+
+responder_consultant:
+  user: responder
+  title: Startup Consultant
+  company: Future Widget
+  description: Programmer with great startup idea seeking business consultant.

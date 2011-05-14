@@ -1,15 +1,25 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-   user_id: 
-  job_post_id: 
-  email: MyString
-  response: MyText
-  resume: MyText
+programmer_responder:
+  user: responder
+  job_post: poster_programer
+  response: I write the world's best code, and I am freindly.
+  resume: Majored in CSC and I worked for IBM.
 
-two:
-   user_id: 
-  job_post_id: 
-  email: MyString
-  response: MyText
-  resume: MyText
+manager_responder:
+  user: responder
+  job_post: poster_programer
+  response: I am great at inspiring people.
+  resume: Majored in CSC and I worked for IBM.
+
+manager_manager:
+  user: manager
+  job_post: poster_manager
+  response: I have a proven track record of managing.
+  resume: Harvard MBA
+
+consultant_consultant:
+  user: consultant
+  job_post: responder_consultant
+  response: I can make you more profitable.
+  resume: I am the lord of six sigma.

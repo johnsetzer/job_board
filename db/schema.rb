@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110510234238) do
+ActiveRecord::Schema.define(:version => 20110511062616) do
 
   create_table "job_posts", :force => true do |t|
     t.string   "title",       :limit => 50, :null => false
@@ -22,9 +22,8 @@ ActiveRecord::Schema.define(:version => 20110510234238) do
   end
 
   create_table "job_responses", :force => true do |t|
-    t.integer  "user_id",                    :null => false
-    t.integer  "job_post_id",                :null => false
-    t.string   "email",       :limit => 100, :null => false
+    t.integer  "user_id",     :null => false
+    t.integer  "job_post_id", :null => false
     t.text     "response"
     t.text     "resume"
     t.datetime "created_at"

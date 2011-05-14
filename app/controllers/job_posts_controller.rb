@@ -4,7 +4,7 @@ class JobPostsController < ApplicationController
   # GET /job_posts
   # GET /job_posts.xml
   def index
-    @job_posts = JobPost.all
+    @job_posts = JobPost.where({}).order("updated_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb

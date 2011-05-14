@@ -25,7 +25,7 @@ class Ability
       can [:modify], JobPost, :user_id => user.id
 
       # Only post owners can see their job responses
-      can [:read], JobResponse, :user_id => user.id
+      can [:read, :destroy], JobResponse, :job_post => { :user_id => user.id }
     end
   end
 end
