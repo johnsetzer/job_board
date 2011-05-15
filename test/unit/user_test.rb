@@ -4,7 +4,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
 
-  def default_user(options={})
+  def new_user(options={})
     default_options = {
       :name => 'Mr. New',
       :email => 'new@test.com',
@@ -17,21 +17,21 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'attributes must not be empty' do
-    user = default_user(:name => '')
+    user = new_user(:name => '')
     assert user.invalid?
 
     assert_equal 'can\'t be blank', user.errors[:name].join(';')
   end
 
   test 'attributes must not be too long' do
-    user = default_user(:name => 'a' * 51)
+    user = new_user(:name => 'a' * 51)
     assert user.invalid?
 
     assert_equal 'is too long (maximum is 50 characters)', user.errors[:name].join(';')
   end
 
   test 'save and find' do
-    created_user = default_user
+    created_user = new_user
     created_user.save
 
     found_users = User.where(:email => 'new@test.com')

@@ -10,4 +10,10 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  include Devise::TestHelpers
+
+  def sign_in_user(user_sym = :programmer)
+    @user = users(user_sym)
+    sign_in @user
+  end
 end

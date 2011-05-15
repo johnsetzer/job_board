@@ -24,7 +24,7 @@ class Ability
       # Only post owners can edit their posts
       can [:modify], JobPost, :user_id => user.id
 
-      # Only post owners can see their job responses
+      # Only post owners can read or destroy their job responses
       can [:read, :destroy], JobResponse, :job_post => { :user_id => user.id }
     end
   end
