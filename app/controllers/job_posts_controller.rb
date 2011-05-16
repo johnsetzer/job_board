@@ -13,6 +13,7 @@ class JobPostsController < ApplicationController
   # GET /job_posts/1
   def show
     @job_post = JobPost.find(params[:id])
+    @job_response = @job_post.my_first_response(current_user.id) if user_signed_in?
 
     respond_to do |format|
       format.html # show.html.erb
@@ -66,7 +67,7 @@ class JobPostsController < ApplicationController
     @job_post.destroy
 
     respond_to do |format|
-      format.html { redirect_to(job_posts_url) }
+      format.html { redirect_to(job_posts_url, :notice => 'Job post was successfully destroyed.') }
     end
   end
 end

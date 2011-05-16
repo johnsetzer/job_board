@@ -9,13 +9,13 @@
 </p>
 
 <p>
-  <b>Response:</b>
-  <%= @job_response.response %>
+  <b>Response:</b><br />
+  <%= nl2br(h(@job_response.response)) %>
 </p>
 
 <p>
-  <b>Resume:</b>
-  <%= @job_response.resume %>
+  <b>Resume:</b><br />
+  <%= nl2br(h(@job_response.resume)) %>
 </p>
 
 <%= link_to "Back to Reponses", job_post_job_responses_path(@job_response.job_post) %>

@@ -1,3 +1,5 @@
+<h2>Showing Job Post</h2>
+
 <p>
   <b> title:</b>
   <%= @job_post. title %>
@@ -9,9 +11,16 @@
 </p>
 
 <p>
-  <b>Description:</b>
-  <%= @job_post.description %>
+  <b>Description:</b><br />
+  <%= nl2br(h(@job_post.description)) %>
 </p>
+
+<% if !@job_response.nil? %>
+  <p>
+    <b>Applied on:</b>
+    <%= @job_response.created_at %>
+  </p>
+<% end %>
 
 
 <% if can? :modify, @job_post %>
@@ -21,9 +30,12 @@
 <% 
   can_respond = can?(:create, JobResponse)
   if can_respond && @job_post.user != current_user
+    if @job_response.nil? 
 %>
-  <%= link_to 'Apply', new_job_post_job_response_path(@job_post) %> |
-<% elsif can_respond %>
+      <%= link_to 'Apply', new_job_post_job_response_path(@job_post) %> |
+<%
+    end
+  elsif can_respond %>
   <%= link_to "Reponses", job_post_job_responses_path(@job_post) %> |
 <% else %>
   To apply you must, <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %> |
