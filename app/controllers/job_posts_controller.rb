@@ -3,7 +3,18 @@ class JobPostsController < ApplicationController
 
   # GET /job_posts
   def index
+    set_tab :all_posts
     @job_posts = JobPost.where({}).order("updated_at DESC")
+
+    respond_to do |format|
+      format.html # index.html.erb
+    end
+  end
+
+  # GET /job_posts/mine
+  def mine
+    set_tab :my_posts
+    @job_posts = JobPost.where({:user_id => current_user}).order("updated_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb

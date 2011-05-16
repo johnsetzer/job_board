@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Response</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @job_responses.each do |job_response| %>
+  <tr>
+    <td><%= job_response.user.name %></td>
+    <td><%= job_response.user.email %></td>
+    <td><%= job_response.response[0..50] %></td>
+    <td><%= job_response.updated_at %></td>
+    <td><%= link_to 'Show', job_response %></td>
+    <td><%= link_to 'Destroy', job_response, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

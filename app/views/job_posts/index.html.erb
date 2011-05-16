@@ -1,32 +1,11 @@
-<h2>Job Posts</h2>
+<% if user_signed_in? %>
+  <%= render(:partial => "/tabs") %>
+<% else %>
+  <h2>Job Posts</h2>
+<% end %>
 
 <% if @job_posts.size > 0 %>
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Company</th>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-
-  <% @job_posts.each do |job_post| %>
-    <tr>
-      <td><%= job_post.title %></td>
-      <td><%= job_post.company %></td>
-      <td><%= job_post.updated_at %></td>
-      <td><%= link_to 'Show', job_post %></td>
-      <% if can? :modify, job_post %>
-        <td><%= link_to 'Edit', edit_job_post_path(job_post) %></td>
-        <td><%= link_to 'Destroy', job_post, :confirm => 'Are you sure?', :method => :delete %></td>
-      <% else %>
-        <th></th>
-        <th></th>
-      <% end %>
-    </tr>
-  <% end %>
-  </table>
+  <%= render(:partial => "table") %>
 <% else %>
   <p>There are no jobs posted at this time.</p>
 <% end %>

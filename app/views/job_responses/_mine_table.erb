@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Title</th>
+    <th>Response</th>
+    <th>Date</th>
+  </tr>
+
+<% @job_responses.each do |job_response| %>
+  <tr>
+    <td><%= job_response.job_post.company %></td>
+    <td><%= job_response.job_post.title %></td>
+    <td><%= job_response.response[0..50] %></td>
+    <td><%= job_response.updated_at %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,9 @@
+<%= render(:partial => "/tabs") %>
+
+<% if @job_responses.size > 0 %>
+  <%= render(:partial => "mine_table") %>
+<% else %>
+  <p>You haven't made and responses.</p>
+<% end %>
+
+<br />

@@ -1,0 +1,12 @@
+<%= render(:partial => "/tabs") %>
+
+<% if @job_posts.size > 0 %>
+  <%= render(:partial => "table") %>
+<% else %>
+  <p>You haven't posted any jobs.</p>
+<% end %>
+
+<br />
+
+<%= link_to 'New Job Post', new_job_post_path %>
+

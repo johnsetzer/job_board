@@ -6,7 +6,7 @@ development:
   database: job_board_dev
   pool: 5
   username: job_board_dev
-  password: lockbox7
+  password: opensaysme
 
 test:
   adapter: postgresql
@@ -14,7 +14,7 @@ test:
   database: job_board_test
   pool: 5
   username: job_board_test
-  password: lockbox7
+  password: opensaysme
 
 production:
   adapter: postgresql
@@ -22,4 +22,4 @@ production:
   database: job_board_production
   pool: 5
   username: job_board_production
-  password: lockbox7
+  password: opensaysme

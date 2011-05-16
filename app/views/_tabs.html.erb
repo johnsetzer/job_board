@@ -1,0 +1,8 @@
+<% tabs_tag :open_tabs => { :class => "tab_list" } do |tab| %>
+  <%= tab.all_posts 'All Posts', job_posts_path %>
+  <%= tab.my_posts 'My Posts', job_posts_mine_path %>
+  <%= tab.my_responses 'My Responses', job_responses_mine_path %>
+<% end %>
+<hr />
+
+

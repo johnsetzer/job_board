@@ -54,3 +54,25 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+/* Tabs */
+.tab_list {
+    list-style-type: none;
+}
+
+.tab_list li {
+    margin-left: 1em;
+    background-color: lightgrey;
+    width: 10em;
+    height: 1.5em;
+    font-size: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+    display: inline;
+    text-align: center;
+}
+
+.tab_list li.current {
+    font-weight: bold;
+    background-color: lightblue;
+}

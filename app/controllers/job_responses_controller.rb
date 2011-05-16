@@ -11,6 +11,16 @@ class JobResponsesController < ApplicationController
     end
   end
 
+  # GET /job_responses/mine
+  def mine
+    set_tab :my_responses
+    @job_responses = JobResponse.where({:user_id => current_user}).order("updated_at DESC")
+
+    respond_to do |format|
+      format.html # index.html.erb
+    end
+  end
+
   # GET /job_responses/1
   def show
     @job_response = JobResponse.find(params[:id])

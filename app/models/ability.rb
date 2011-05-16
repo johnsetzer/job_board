@@ -26,6 +26,12 @@ class Ability
 
       # Only post owners can read or destroy their job responses
       can [:read, :destroy], JobResponse, :job_post => { :user_id => user.id }
+
+      # Any see their job posts
+      can [:mine], JobPost
+
+      # Any see their job responses
+      can [:mine], JobResponse
     end
   end
 end
